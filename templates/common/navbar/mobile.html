@@ -1,0 +1,42 @@
+{% load static %}
+
+<div class="mobile-nav hmburger-menu" id="mobile-nav" style="display: block">
+    <div class="res-log">
+      <a href="">
+        <img src="{% static 'assets/img/logo.png' %}" alt="Responsive Logo" />
+      </a>
+    </div>
+    <ul>
+      <li>
+        <a href="{% url 'home' %}">home</a>
+      </li>
+      
+      <li> <a href="{% url 'home' %}">About</a></li>
+      
+      <li>
+        <a href="JavaScript:void(0)">Services</a>
+      </li>
+      <li>
+        <a href="{% url 'pricing' %}">Pricing</a>
+      </li>
+      <li>
+        <a href="JavaScript:void(0)">News</a>
+      </li>
+      
+      <li><a href="{% url 'contact' %}">contact</a></li>
+    </ul>
+
+    <a href="JavaScript:void(0)" id="res-cross"></a>
+
+    <ul class="social-media">
+      <li>
+        <a href="#" class="f"><i class="fa-brands fa-facebook-f"></i></a>
+      </li>
+      <li>
+        <a href="#" class="t"><i class="fa-brands fa-twitter"></i></a>
+      </li>
+      <li>
+        <a href="#" class="in"><i class="fa-brands fa-linkedin-in"></i></a>
+      </li>
+    </ul>
+  </div>

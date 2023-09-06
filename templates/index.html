@@ -1,0 +1,233 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+<!---->
+
+{% block content %}
+<!---->
+{% include "components/home/hero.html" %}
+
+<section class="gap">
+  <div class="container">
+    <div class="heading">
+      <img src="{% static 'assets/img/heading-img.png' %}" alt="heading-img" />
+      <p>Welcome to the Dry Cleaning Company</p>
+      <h2>Professional Cleaning Services for Home and Office</h2>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="professional-img">
+          <img alt="img" src="{% static 'assets/img/professional.jpg' %}" />
+          <div class="professional-phon">
+            <img alt="img" src="{% static 'assets/img/phon-icon.png' %}" />
+            <span>Emergency? Call Us Now :</span>
+            <a href="callto:{{telephone_contact}}">{{telephone_contact}}</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="professional">
+          <p>
+            Our home cleaning services are designed to give you the peace of
+            mind you deserve and the time you need to enjoy your life and love
+            give you the peace of mind you deserve and the time you need to
+            enjoy your life and love home cleaning services.
+          </p>
+          <ul class="list-style">
+            <li>
+              <div class="bol"></div>
+              One-off, weekly or fortnightly visits
+            </li>
+            <li>
+              <div class="bol"></div>
+              Vetted & background-checked cleaners
+            </li>
+            <li>
+              <div class="bol"></div>
+              Keep the same cleaner for every visit
+            </li>
+            <li>
+              <div class="bol"></div>
+              Book, manage & pay online
+            </li>
+          </ul>
+          <div class="d-sm-flex align-items-center">
+            <div class="d-flex align-items-center">
+              <h4>14<sup>+</sup></h4>
+              <h6>years of experience</h6>
+            </div>
+            <div class="d-flex align-items-center company-director">
+              <img src="{% static 'assets/img/man.jpg' %}" alt="img" />
+              <div>
+                <span>Company Director</span>
+                <h6>Wycliffe Mboya</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!---->
+<!--SERVICES-->
+{% include "components/home/services.html" %}
+<!---->
+
+<div class="container">
+    <div class="refer-friend" style="background-image: url({% static 'assets/img/balloon.jpg' %}%);">
+        <img src="{% static 'assets/img/balloon-girl.png' %}" alt="balloon-girl">
+        <img alt="babal" src="{% static 'assets/img/babal.png' %}" class="babal">
+        <div>
+            <h2>Refer a Friend <span>Get 15% off</span> Your Next Order.</h2>
+            <h5>The discount applies when the referred friend has placed an order</h5>
+            <a href="#" class="sec-btn">Refer a Friend</a>
+        </div>
+    </div>
+</div>
+
+<!--How it works-->
+
+{% include "components/home/how-it-works.html" %}
+
+<!--How it works-->
+<div class="container">
+    <div class="refer-friend two" style="background-image: url({% static 'assets/img/balloon-1.jpg' %});">
+        <div class="d-flex">
+            <div><i><img src="{% static 'assets/img/phon-icon-w.png' %}" alt="phon-icon"></i></div>
+            <div>
+                <h2>Quality Service with Free Collection & Delivery</h2>
+                <h5>Emergency Helpline:<a href="callto:{{telephone_contact}}"></a>{{telephone_contact}}</h5>
+            </div>
+        </div>
+        <img src="{% static 'assets/img/bus-1.png' %}" alt="bus">
+    </div>
+</div>
+
+<!--client review-->
+{% include "components/home/clients-reviews.html" %}
+
+<!--client review-->
+
+<div class="container-fluid py-5 mt-5 mb-5" style="padding-top:100px !important;">
+  <div class="offset-lg-1 col-lg-11">
+      <div class="dryclean refer-friend" style="background-image:url({% static 'assets/img/balloon-1.jpg' %})">
+          <div>
+              <div class="heading two">
+                  <p>landry and dryclean application</p>
+                  <h2 class="pb-0">Laundry Service For Your Business!</h2>
+              </div>
+              <ul class="list-style">
+                  <li><div class="bol"></div>A professional laundry and dry cleaners</li>
+                  <li><div class="bol"></div>High-tech, high-touch dry cleaning service</li>
+                  <li><div class="bol"></div>Exclusive offers & discounts</li>
+              </ul>
+              <div class="d-flex position-relative">
+                  <a href="#" class="pe-3">
+                      <img class="google-play" src="{% static 'assets/img/google-play.png' %}" alt="google-play">
+                  </a>
+                  <a href="#">
+                      <img class="google-play" src="{% static 'assets/img/apple.png' %}" alt="google-play">
+                  </a>
+              </div>
+          </div>
+          <div class="refer-friend-img position-relative">
+              <img src="{% static 'assets/img/bus.png' %}" alt="bus">
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<section class="gap">
+  <div class="container">
+      <div class="new-laundry">
+          <div>
+              <div class="heading two">
+                  <p>New Laundry Service Near You</p>
+                  <h3>A Gentle Solution for The Environment, and For Your Wallet</h3>
+              </div>
+              <form class="city-zip">
+                  <label>Subscribe to receive our latest news and special offers from our Laundry</label>
+                  <div class="d-sm-flex items-center justify-between">
+                      <input placeholder="example@gmail.com" type="text" name="newsletter">
+                      <button class="sec-btn">subscrib </button>
+                  </div>
+              </form>
+              <div class="d-flex align-items-center">
+                  <img src="{% static 'assets/img/chake.png' %}" alt="img">
+                  <h6>Highest quality and lowest price guaranteed.</h6>
+              </div>
+          </div>
+          <div class="new-laundry-img">
+              <img alt="img" src="{% static 'assets/img/new-laundry.jpg' %}">
+              <a data-fancybox="" href="https://www.youtube.com/watch?v=xKxrkht7CpY">
+                  <i>
+                    <svg width="11" height="17" viewBox="0 0 11 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11 8.49951L0.5 0.27227L0.5 16.7268L11 8.49951Z" fill="white"></path>
+                    </svg>
+                  </i>
+              </a>
+          </div>
+      </div>
+      <div class="count-style">
+          <div class="count-text">
+             <div class="d-flex justify-content-center">
+                  <h2 class="count" data-number="12" ></h2>
+                  <span>M</span>
+             </div>
+             <h3 class="text">Garments laundered last year</h3>
+          </div>
+          <div class="boder"></div>
+          <div class="count-text">
+             <div class="d-flex justify-content-center">
+                  <h2 class="count" data-number="850" ></h2>
+                  <span>K</span>
+             </div>
+             <h3 class="text">Garments in circulation</h3>
+          </div>
+          <div class="boder"></div>
+          <div class="count-text mb-0">
+             <div class="d-flex justify-content-center">
+                  <h2 class="count" data-number="99" ></h2>
+                  <span>%</span>
+             </div>
+             <h3 class="text">Customer satisfaction with products</h3>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+{% endblock content %}
+<!---->
+{% block modal %}{% endblock modal %}
+
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      Launch demo modal
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        

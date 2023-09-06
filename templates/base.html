@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Cleanio{% endblock title %}</title>
+    <link rel="icon" href="{% static 'assets/img/heading-img.png' %}" />
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'assets/css/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/owl.carousel.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/owl.theme.default.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}" />
+    <!-- nice-select -->
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}" />
+    <!-- fancybox -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/jquery.fancybox.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/aos.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/fontawesome.min.css' %}"
+    />
+    <!-- style -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+    <!-- responsive -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+    <!-- color -->
+    <link rel="stylesheet" href="{% static 'assets/css/color.css' %}" />
+  </head>
+
+  <body>
+    <!-- preloader -->
+    <div class="preloader">
+      <div class="loader-6">
+        <div class="set-one">
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+        <div class="set-two">
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+    <!-- preloader end -->
+
+    <!--Header-->
+    {% include "common/navbar/header.html" %}
+    <!--/Header-->
+
+    <!--block sections-->
+    {% block header-sections %}{% endblock header-sections %}
+    <!--block sections-->
+    
+    {% block content %}{% endblock content %}
+    <!---->
+    {% block modal %}{% endblock modal %}
+
+    <!-- footer -->
+    {% include "common/footer.html" %}
+    <!-- footer -->
+
+    <!---->
+
+    {% comment %} modal {% endcomment %}
+
+    <!-- popup -->
+    <div class="box">
+      <div class="flex-img">
+        <div class="form-box">
+          <div class="comment">
+            <h2>Schedule a Pickup</h2>
+            <div class="boder-bar"></div>
+          </div>
+
+          <form method="post" action="{% url 'order:pickup-order' %}" >
+           {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-6">
+                <input
+                  placeholder="Pick-Up Date"
+                  type="text"
+                  onfocus="(this.type = 'date')"
+                  id="date"
+                  type="text"
+                  name="pickup_date"
+                />
+              </div>
+              <div class="col-lg-6">
+                <input
+                  placeholder="Delivery Date"
+                  type="text"
+                  onfocus="(this.type = 'date')"
+                  id="date"
+                  type="text"
+                  name="delivery_date"
+                />
+              </div>
+              <div class="col-lg-6">
+                {{pickup_form_class.full_name}}
+              </div>
+              <div class="col-lg-6">
+                {{pickup_form_class.email}}
+              </div>
+              <div class="col-lg-6">
+                {{pickup_form_class.phone}}
+              </div>
+              <div class="col-lg-6">
+                {{pickup_form_class.address}}
+              </div>
+              
+              <div class="col-lg-12">
+                {{pickup_form_class.instructions}}
+              </div>
+              {% comment %} <a href="#" class="sec-btn">Book Order</a> {% endcomment %}
+              <button class="sec-btn">Submit</button>
+            </div>
+          </form>
+        </div>
+        <img src="{% static 'assets/img/box.jpg' %}" alt="box" />
+      </div>
+      <div class="close"><i class="fa-solid fa-xmark"></i></div>
+    </div>
+    
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Login to account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form method="post" action="{% url 'accounts:login' %}">
+                {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  {{login_form.email}}
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  {{login_form.password}}
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#resetpassword">Reset Password</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="resetpassword" tabindex="-1" aria-labelledby="resetpasswordLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="resetpasswordLabel">Reset Password</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Old Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">One time password sent to your email</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">New Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="flex items-center justify-between">
+                <button type="submit" class="btn btn-primary">save changes</button>
+                <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal">cancel reset</button>
+              </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- popup end -->
+    
+    
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox clearfix">
+      <div class="white_content">
+          <a href="javascript:;" class="textright" id="close"><i class="fa-regular fa-circle-xmark"></i></a>
+              <h1>Dry Cleaning & Laundry Experts</h1>
+              <h4 class="des">Dry cleaning and laundry service, made to make life fresher</h4>
+        <figure>
+          <img src="{% static 'assets/img/desktop-menu-img.jpg' %}" alt="Desktop Menu Image">
+        </figure>
+        <h3>Get in touch</h3>
+        <p class="num"><i>
+              <svg height="112" viewBox="0 0 24 24" width="112" xmlns="http://www.w3.org/2000/svg"><g clip-rule="evenodd" fill="rgb(255255,255)" fill-rule="evenodd"><path d="m7 2.75c-.41421 0-.75.33579-.75.75v17c0 .4142.33579.75.75.75h10c.4142 0 .75-.3358.75-.75v-17c0-.41421-.3358-.75-.75-.75zm-2.25.75c0-1.24264 1.00736-2.25 2.25-2.25h10c1.2426 0 2.25 1.00736 2.25 2.25v17c0 1.2426-1.0074 2.25-2.25 2.25h-10c-1.24264 0-2.25-1.0074-2.25-2.25z"></path><path d="m10.25 5c0-.41421.3358-.75.75-.75h2c.4142 0 .75.33579.75.75s-.3358.75-.75.75h-2c-.4142 0-.75-.33579-.75-.75z"></path><path d="m9.25 19c0-.4142.33579-.75.75-.75h4c.4142 0 .75.3358.75.75s-.3358.75-.75.75h-4c-.41421 0-.75-.3358-.75-.75z"></path></g></svg>
+            </i><a href="callto:{{telephone_contact}}">(+254) {{telephone_contact}}</p>
+        <p class="num"><i>
+            <svg version="1.1" xml:space="preserve" width="682.66669" height="682.66669" viewBox="0 0 682.66669 682.66669" xmlns="http://www.w3.org/2000/svg"><clipPath clipPathUnits="userSpaceOnUse"><path d="M 0,512 H 512 V 0 H 0 Z"></path></clipPath><g transform="matrix(1.3333333,0,0,-1.3333333,0,682.66667)"><g><g clip-path="url(#clipPath2333)"><g transform="translate(256,92)"><path d="m 0,0 c -126.964,143.662 -160,165.23 -160,240 0,88.366 71.634,160 160,160 88.365,0 160,-71.634 160,-160 C 160,165.854 130.212,147.337 0,0 Z" style="fill:none;stroke:#8cc63f;stroke-width:40;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"></path></g><g transform="translate(316,372)"><path d="m 0,0 -80,-80 -40,40" style="fill:none;stroke:#8cc63f;stroke-width:40;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"></path></g></g></g></g>
+            </svg>
+          </i>Jkuat Gate A, Juja Kiambu</p>
+        <div class="social-medias">
+            <a href="javascript:void(0)">Facebook</a>
+            <a href="javascript:void(0)">Twitter</a>
+            <a href="javascript:void(0)">Linkedin</a>
+          </div>
+      </div>
+  </div>
+<!-- LIGHTBOX END -->
+    
+
+    <!-- progress -->
+<!-- progress -->
+<div id="progress">
+  <span id="progress-value"><i class="fa-solid fa-arrow-up"></i></span>
+</div>
+<!-- progress end -->
+    
+    <!-- jQuery -->
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+    <!-- Bootstrap Js -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/slick.min.js' %}"></script>
+    <script src="{% static 'assets/js/aos.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <!-- fancybox -->
+    <script src="{% static 'assets/js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'assets/js/aos-data.js' %}"></script>
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% load static %} {% load humanize %}
+<!---->
+
+{% block content %}
+<section class="error-page" style="background-image: url({% static 'assets/img/404.jpg' %})">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="page-not-found">
+          <h2>4<span>0</span>4</h2>
+          <h3>Ooops, Page Not Found</h3>
+          <p>We Can't Seem to find the page you're looking for.</p>
+          <form>
+            <input type="text" placeholder="Enter Kayword...." />
+            <button class="sec-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <a href="{% url 'home' %}" class="sec-btn">Back To Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+
+{% endblock content %}

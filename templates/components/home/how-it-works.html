@@ -1,0 +1,63 @@
+
+{% load static %}
+{% load humanize %}
+
+
+
+
+<section class="works-section" style="background-image: url(assets/img/works-section.jpg);">
+    <div class="container">
+        <div class="heading">
+            <img src="{% static 'assets/img/heading-img.png' %}" alt="heading-img">
+            <p>Follow A Few Easy Steps</p>
+            <h2>How it Works</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="work-stap">
+                    <div class="work-stap-img">
+                        <i><img alt="img" src="{% static 'assets/img/works-icon-1.png' %}"></i>
+                        <span>1</span>
+                    </div>
+                    <h3>Book A Pickup</h3>
+                    <p>Choose when and where you wish us to collect & deliver your laundry.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="work-stap two">
+                    <div class="work-stap-img">
+                        <i><img alt="img" src="{% static 'assets/img/works-icon-2.png' %}"></i>
+                        <span>2</span>
+                    </div>
+                    <h3>We Collect</h3>
+                    <p>Our team collects your clothes from your doorstep. </p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="work-stap">
+                    <div class="work-stap-img">
+                        <i><img alt="img" src="{% static 'assets/img/works-icon-3.png' %}"></i>
+                        <span>3</span>
+                    </div>
+                    <h3>Expert Processing</h3>
+                    <p>Choose when and where you wish us to collect & deliver your laundry.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="work-stap two mb-0">
+                    <div class="work-stap-img">
+                        <i><img alt="img" src="{% static 'assets/img/works-icon-4.png' %}"></i>
+                        <span>4</span>
+                    </div>
+                    <h3>We Deliver</h3>
+                    <p>We bring back your freshly cleaned and rejuvenated clothes</p>
+                </div>
+            </div>
+            <div class="btn-center">
+                <a href="javascript:void(0)" class="sec-btn lightbox-toggle">Schedule a Pickup</a>
+            </div>
+        </div>
+        <img src="{% static 'assets/img/line.png' %}" class="works-line" alt="line" data-aos="fade-right" data-aos-delay="700" data-aos-duration="1500">
+        </div>
+    </div>
+</section>

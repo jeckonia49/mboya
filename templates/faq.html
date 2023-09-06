@@ -1,0 +1,125 @@
+{% extends "base.html" %} {% load static %} {% load humanize %} 
+
+
+<!---->
+
+
+{% block header-sections %}
+
+<section class="hero-section banner">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="hero-text">
+          <h2>Faq</h2>
+          <h6>Dry cleaning and laundry service, made to make life fresher</h6>
+        </div>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+        </ol>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-img">
+          <img src="{% static 'assets/img/banner.jpg' %}" alt="img" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="heroshaps-1"></div>
+  <div class="heroshaps-2"></div>
+</section>
+
+{% endblock header-sections %}
+<!---->
+{% block content %}
+
+<section style="padding:50px 0px !important;">
+  <div class="container">
+    <div class="heading">
+      <img src="{% static 'assets/img/heading-img.png' %}" alt="heading-img" />
+      <p>laundry faq's</p>
+      <h2>Laundry Helpful Faq's</h2>
+    </div>
+    <div class="accordion">
+      <div class="accordion-item">
+        <a href="#" class="heading">
+          <div class="icon"></div>
+          <div class="title">Dry cleaning worth the cost?</div>
+        </a>
+
+        <div class="content">
+          <p>
+            Dry cleaning is always gently takes about 3-4 hours on average. The
+            cleaning time depends on the material type, garment dirtiness, and
+            other things.er, but for your more durable.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item active">
+        <a href="#" class="heading">
+          <div class="icon"></div>
+          <div class="title">How long does dry clean take?</div>
+        </a>
+
+        <div class="content" style="display: block">
+          <p>
+            Dry cleaning is always gently takes about 3-4 hours on average. The
+            cleaning time depends on the material type, garment dirtiness, and
+            other things.er, but for your more durable.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <a href="#" class="heading">
+          <div class="icon"></div>
+          <div class="title">Best Dry Cleaners near me?</div>
+        </a>
+
+        <div class="content">
+          <p>
+            Dry cleaning is always gently takes about 3-4 hours on average. The
+            cleaning time depends on the material type, garment dirtiness, and
+            other things.er, but for your more durable.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <a href="#" class="heading">
+          <div class="icon"></div>
+          <div class="title">Does dry cleaning get rid of smell?</div>
+        </a>
+
+        <div class="content">
+          <p>
+            Dry cleaning is always gently takes about 3-4 hours on average. The
+            cleaning time depends on the material type, garment dirtiness, and
+            other things.er, but for your more durable.
+          </p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <a href="#" class="heading">
+          <div class="icon"></div>
+          <div class="title">How does gold dry cleaners work?</div>
+        </a>
+
+        <div class="content">
+          <p>
+            Dry cleaning is always gently takes about 3-4 hours on average. The
+            cleaning time depends on the material type, garment dirtiness, and
+            other things.er, but for your more durable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
