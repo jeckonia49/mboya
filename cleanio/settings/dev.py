@@ -49,13 +49,13 @@ EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD") #password associated
 SITE_CONTACT_TELEPHONE="0769328563"
 
 
-DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'default',
-		'USER': 'cleanio',
-		'PASSWORD': 'Mzeemara@123',
-		'HOST':'cleanio.mysql.pythonanywhere-services.com',
-		'PORT':'3306',
-	}
-}
+# DATABASES = {
+# 	'default': {
+# 		'ENGINE': 'django.db.backends.mysql',
+# 		'NAME': 'cleanio-mboya',
+# 		'USER': 'cleanio',
+# 		'PASSWORD': 'Mzeemara@123',
+# 		'HOST':'cleanio.mysql.pythonanywhere-services.com',
+# 		'PORT':'3306',
+# 	}
+# }
