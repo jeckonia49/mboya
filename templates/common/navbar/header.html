@@ -61,27 +61,17 @@
         </div>
         <div>
           <div class="time">
-            <div class="login d-flex align-items-center">
+            <div class="login d-flex align-items-center" style="margin-right: 20px !important;">
               <i class="fa-solid fa-clock"></i>
               <p>Monday to Saturday:<b>8.00 AM - 05.00 PM</b></p>
             </div>
             <div class="login">
               {% if request.user.is_authenticated %}
-              <div class="dropdown">
               <i class="fa-solid fa-user"></i>
-              <a 
-              href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">{{request.user.user_profile.username|truncatewords:"10"}}</a>
-              
-               
-               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </div>
-              
-               {% else %}
-              <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login and Register</a>
+              <a href="#">{{request.user.user_profile.username|truncatewords:"10"}}</a>
+              {% else %}
+              <span class="mr-2"></span>
+              <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Login and Register</a>
               {% endif %}
             </div>
           </div>
