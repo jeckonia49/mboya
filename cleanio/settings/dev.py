@@ -37,13 +37,16 @@ CONTEXT_PROCESSORS = [
 TEMPLATES[0]['OPTIONS']['context_processors'] += CONTEXT_PROCESSORS
 
 # EMAIL SETTINGS
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
+
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY #password associated with above email-id
 EMAIL_PORT = 587
-EMAIL_HOST_USER = DEFAULT_FROM_EMAIL #sender's email-id
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD") #password associated with above email-id
+EMAIL_USE_TLS = True
+
 
 
 SITE_CONTACT_TELEPHONE="0769328563"
