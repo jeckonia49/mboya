@@ -27,13 +27,14 @@ class PickUpForm(forms.ModelForm):
         }
 
 class ContactForm(forms.ModelForm):
-    model = Contact
-    fields = ['email', 'phone', 'message']
-    widgets = {
-        "email": forms.EmailInput(attrs={"placeholder": "example@gmail.com"}),
-        "phone": forms.NumberInput(attrs={"placeholder": "07566353662"}),
-        "message":forms.Textarea(attrs={"placeholder": "message..."})
-    }
+    class Meta:
+        model = Contact
+        fields = ['email', 'phone', 'message']
+        widgets = {
+            "email": forms.EmailInput(attrs={"placeholder": "example@gmail.com"}),
+            "phone": forms.NumberInput(attrs={"placeholder": "07566353662"}),
+            "message":forms.Textarea(attrs={"placeholder": "message..."})
+        }
 
 class SubscriptionForm(forms.ModelForm):
     class Meta:
