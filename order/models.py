@@ -15,7 +15,8 @@ class Order(models.Model):
     completed = models.BooleanField(default=False)
     pickup_date = models.CharField(max_length=100, blank=True, null=True)
     delivery_date = models.CharField(max_length=100, blank=True, null=True)
-
+    updatedAt = models.DateTimeField(auto_now=True)
+    
     class Meta:
         verbose_name = 'Order'
         verbose_name_plural = 'Orders'

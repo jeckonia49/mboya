@@ -3,6 +3,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
+
 from .views import (
     CleanioHomeView,
     ContactView,
@@ -13,6 +15,13 @@ from cleanio.utils.views import (
     subscribe_views
 )
 
+from django.contrib.sitemaps.views import sitemap
+from .settings.sitemaps import (ArticleSitemap,StaticSitemap)
+
+sitemaps = {
+    'Article': ArticleSitemap,
+    'static': StaticSitemap,
+}
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -23,6 +32,8 @@ urlpatterns = [
     path("faq/", FAQView.as_view(), name="faq"),
     path("pricing/", PricingView.as_view(), name="pricing"),
     path("subscribe/", subscribe_views, name="subscribe"),
+    path('robots.txt', TemplateView.as_view(template_name='robots.txt', content_type='text/plain')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
 ]
 
 # STATIC FILES PATH
